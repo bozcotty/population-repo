@@ -34,8 +34,6 @@ class CSVReader
 
 end
 
-  
-
 
 class String
   def underscore
@@ -49,12 +47,3 @@ class String
 end
 
 
-def create_hash(values)
-  h = {}
-  @headers.each_with_index do |header, i|
-    #remove new lines from the value
-    value = values[i].strip.gsub('"', '')
-    h[header] = value unless value.empty? 
-  end
-  h
-end
