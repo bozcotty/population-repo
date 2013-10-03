@@ -39,7 +39,7 @@ end
 
 class String
   def underscore
-    self.gsub(/::/, '/').#periods?
+    self.gsub(/::/, '/').
     gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
     gsub(/([a-z\d])([A-Z])/,'\1_\2').
     tr("-", "_").
@@ -48,10 +48,6 @@ class String
   end
 end
 
-
-reader = CSVReader.new('a')
-reader.headers = "RecordName, ZipCode"
-p reader.create_hash(['123', '12345'])
 
 def create_hash(values)
   h = {}
