@@ -25,7 +25,7 @@ class Analytics
       self.send opt[:method] #run the chosen option
       :done  #what is this?
     else
-      opt[:method] #otherwise, run the option?
+      opt[:method] #otherwise, exit
 
     end
   end
