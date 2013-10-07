@@ -17,8 +17,8 @@ class Analytics
     @options << {:menu_id => 6, :menu_title => 'Exit', :method => :exit }
   end
 
-  def run(menu_choice)
-    opt = @options.select {|o| o[menu_id] == menu_choice}.first  #what is the .first doing here?
+  def run(choice)
+    opt = @options.select {|o| o[menu_id] == choice}.first  #what is the .first doing here?
     if opt.nil?
       print "Invalid choice"
     elsif opt[:method] != :exit #if the option chosen is valid and not Exit, 
