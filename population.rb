@@ -1,20 +1,20 @@
-require_relative 'lib/setup.rb'
-require_relative 'lib/analytics.rb'
+require_relative 'lib/setup'
+require_relative 'lib/analytics'
 
 class Population
   attr_accessor :analytics
 
   def initialize
-    areas = Setup.new().areas
+    areas = Setup.new().areas #a little confusing
     @analytics = Analytics.new(areas)
   end
 
   def menu
-    system 'clear'
-    print "Population Menu"
-    print "_______________"
-    @analytics.options each do |opt|
-      print "#{opt[:menu_id]}. #{opt[:menu_title]}"
+    system 'clear' #?
+    puts "Population Menu"
+    puts "_______________"
+    @analytics.options.each do |opt|
+      puts "#{opt[:menu_id]}. #{opt[:menu_title]}"
     end
   end
 
@@ -24,7 +24,7 @@ class Population
       self.menu
       print "Choice: "
       choice = gets.strip.to_i
-      stop = @analytics.run(choice)
+      stop = @analytics.run(choice) #calling the run method from the analytics file
       if stop == :exit
         print "Exiting"
       else

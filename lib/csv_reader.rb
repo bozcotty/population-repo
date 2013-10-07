@@ -13,7 +13,7 @@ class CSVReader
 
     @headers.map! do |h| #the do/end bloc is required with the map! method
 
-      h.gsub('"', '') #even though working withing an array, we're running  
+      h.gsub!('"', '') #even though working withing an array, we're running  
       #string methods on the individual strings within the array
       #here, we're taking away quotes around the strings
 
@@ -37,7 +37,7 @@ class CSVReader
   def read
     f = File.new(@fname, 'r')
 
-    self.header = f.readline #grab the headers (readline is a module that reads
+    self.headers = f.readline #grab the headers (readline is a module that reads
       #one inputted line)
 
     #loop over the lines
